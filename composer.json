@@ -6,16 +6,25 @@
         "framework",
         "laravel"
     ],
+    "repositories": {
+        "qr-to-sheets": {
+            "type": "path",
+            "url": "packages/kukocrunch/qr-to-sheets",
+            "options": {
+                "symlink": true
+            }
+        }
+    },
     "license": "MIT",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.4",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
-        "simplesoftwareio/simple-qrcode": "^3.0",
-        "google/apiclient": "^2.7"
+        "google/apiclient": "^2.7",
+        "kukocrunch/qr-to-sheets": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -25,6 +34,7 @@
         "phpunit/phpunit": "^8.5"
     },
     "config": {
+        "process-timeout": 2400,
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
@@ -63,7 +73,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-        "post-update-cmd": "Google_Task_Composer::cleanup"
+        ],   
+        "post-update-cmd": "Google\\Task\\Composer::cleanup"
     }
 }

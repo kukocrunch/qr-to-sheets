@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('qrtosheets::layouts.app')
 
 @section('content')
         <!--Section: Contact v.2-->
@@ -13,7 +13,7 @@
 
                 <!--Grid column-->
                 <div class="col-md-12 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="{{ action('InformationController@generate') }}" method="POST">
+                    <form id="contact-form" name="contact-form" action="{{ route('generate') }}" method="POST">
 
                         <!--Grid row-->
                         <div class="row">
@@ -21,7 +21,7 @@
                             <!--Grid column-->
                             <div class="col-md-5">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="name" name="first_name" class="form-control">
+                                    <input type="text" id="name" name="first_name" class="form-control" required>
                                     <label for="first_name" class="">First Name</label>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                             <!--Grid column-->
                             <div class="col-md-5">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="last_name" name="last_name" class="form-control">
+                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
                                     <label for="last_name" class="">Last Name</label>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="address" name="address" class="form-control">
+                                    <input type="text" id="address" name="address" class="form-control" required>
                                     <label for="address" class="">Address</label>
                                 </div>
                             </div>
@@ -90,13 +90,13 @@
                         <div class="row">
                             <div class="col-md-1">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="age" name="age" class="form-control">
+                                    <input type="text" id="age" name="age" class="form-control" required>
                                     <label for="age" class="">Age</label>
                                 </div>
                             </div>
                             <div class="col-md-11">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="phone_number" name="phone_number" class="form-control">
+                                    <input type="text" id="phone_number" name="phone_number" class="form-control" required>
                                     <label for="phone_number" class="">Phone Number</label>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
         <section class="col-lg-12 mt-5">
             <div class="row">
                 <div class="col-md-12 mb-md-0 mb-5">
-                <p>To scan QR Information, click <a href="{{ action('InformationController@scanner') }}">here</a>.</p>
+                <p>To scan QR Information, click <a href="{{ route('scan') }}">here</a>.</p>
                 </div>
             </div>
         </section>

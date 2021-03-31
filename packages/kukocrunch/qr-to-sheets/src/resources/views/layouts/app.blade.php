@@ -30,5 +30,5 @@
         </footer>
     </div>
 </body>
-@include('includes.scripts');
+@include('qrtosheets::includes.scripts')
 </html>

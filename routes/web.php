@@ -12,9 +12,3 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/// QR Generation
-Route::get('/', 'InformationController@index');
-Route::post('generate', 'InformationController@generate');
-Route::get('scan-qr', 'InformationController@scanner');
-Route::post('add-qr',  'InformationController@saveQrToSheets')->name("AddQR");
